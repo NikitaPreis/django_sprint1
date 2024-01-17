@@ -3,13 +3,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
 SECRET_KEY = 'django-insecure-2cd22-n_0n#&j8509)+n8^zs4o6%cmsz+^o75mj-rq7@g%gb*^'
 
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1']
-
 
 
 INSTALLED_APPS = [
@@ -56,14 +54,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'blogicum.wsgi.application'
 
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -82,7 +78,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -92,7 +87,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 
 STATIC_URL = '/static/'
