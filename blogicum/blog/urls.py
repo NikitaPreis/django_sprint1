@@ -10,3 +10,5 @@ urlpatterns = [
     path('category/<slug:category_slug>/',
          views.category_posts, name='category_posts'),
 ]
+
+handler404 = "blogicum.views.page_not_found_view"

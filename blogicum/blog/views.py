@@ -1,6 +1,5 @@
 from django.shortcuts import render
-
-from django.http import HttpResponseNotFound
+from django.http import Http404, HttpResponse, HttpResponseNotFound
 
 posts = [
     {
@@ -46,7 +45,6 @@ posts = [
 ]
 
 
-# Create your views here.
 def index(request):
     template = 'blog/index.html'
     reversed_posts = reversed(posts)
@@ -56,13 +54,13 @@ def index(request):
 
 def post_detail(request, id):
     template = 'blog/detail.html'
-    for post in posts:
-        if post['id'] == id:
-            context = {'post': posts[id]}
-            return render(request, template, context)
-        else:
-            continue
-    return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+    try:
+        for post in posts:
+            if post['id'] == id:
+                context = {'post': posts[id]}
+                return render(request, template, context)
+    except:
+        raise Http404()
 
 
 def category_posts(request, category_slug):
